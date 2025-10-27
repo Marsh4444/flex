@@ -42,3 +42,34 @@ while True:
             continue
     else:
         print("Invalid input check very well")
+
+
+#Chatgpt Version.
+print("--------------------- Welcome -------------------------------\n")
+print("⚙️ Unit Converter: Converts Mass ↔ Weight\n")
+
+while True:
+    choice = input("Convert to Mass or Weight? (m/w): ").lower()
+
+    try:
+        if choice == 'w':
+            mass = float(input("Enter the Mass of the object (kg): "))
+            result = mass * 10
+            print(f"\n✅ The Weight is {result} N")
+
+        elif choice == 'm':
+            weight = float(input("Enter the Weight of the object (N): "))
+            result = weight / 10
+            print(f"\n✅ The Mass is {result} kg")
+
+        else:
+            print("⚠️ Invalid choice. Please enter 'm' or 'w'.")
+            continue
+
+        again = input("\nDo you want to convert again? (y/n): ").lower()
+        if again != 'y':
+            print("\n👋 Thanks for using the Unit Converter!")
+            break
+
+    except ValueError:
+        print("\n❌ Invalid number! Please enter a valid numeric value.")
