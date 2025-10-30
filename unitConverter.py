@@ -3,6 +3,18 @@ def unitConvert(unit = 'm', number = 0, newNum = None, newUnit = None):
     print("----------------Welcome---------------\nConvert Mass to Weight and vice versal")
     while True:
         try:
+            #if the user want to chang the unit or number
+            newValue = input("\nDo you want to change the unit?(y/n) ").lower()
+            if newValue == 'y':
+                newUnit = input("Mass or weight?(m/w) ").lower()
+                if newUnit not in ['m', 'w']:
+                    print("❌ invalid selection...Try again ")
+                    continue
+                unit = newUnit
+
+                newNum = float(input("Enter a new value: "))
+                number = newNum
+                
             if unit == 'm':
                 result = number * 10
                 print(f"\nYour result ==> {result}Kg\n")
